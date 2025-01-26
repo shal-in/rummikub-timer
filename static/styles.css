@@ -1,0 +1,182 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --background: var(--background-1);
+    --start: var(--start-1);
+    --end: var(--end-1);
+    --text: var(--text-1);
+
+    --background-0: black;
+    --start-0: rgb(57, 47, 47);
+    --end-0: grey;
+    --text-0: yellow;
+
+    --background-1: #1A1627;
+    --start-1: #B8B1D2;
+    --end-1: #887DB5;
+    --text-1: #3B345B;
+
+    --background-2: orange;
+    --start-2: green;
+    --end-2: blue;
+    --text-2: yellow;
+}
+
+html{
+    font-size: 18px;
+    font-family: "Smooch Sans";
+    background-color: var(--background);
+    color: var(--text);
+    fill: var(--text);
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+body{
+    max-width: 1920px;
+    display: block;
+    margin: auto;
+    max-height: 99vh;
+}
+
+.header{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding-inline: 3vw;
+    position: relative;
+    top: 1vh;
+    left: 0;
+    max-width: 1920px;
+    user-select: none;
+}
+
+
+.header .title{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.header h2 span:hover{
+    color: var(--start);
+    cursor: pointer;
+}
+
+
+.header .buttons{
+    display: flex;
+    align-items: start;
+    justify-content: end;
+}
+
+.buttons button{
+    background-color: var(--background);
+    border: none;
+    outline: none;
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.buttons button svg{
+    height: 2.5rem;
+    width: auto;
+}
+
+.header .title h1, .header .title h2{
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 0.15rem;
+}
+
+ .timer-settings{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 73vh;
+    left: 0;
+    z-index: 0;
+}
+
+.timer-settings p{
+    font-size: 4rem;
+    font-weight: 100;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    user-select: none;
+
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.timer-settings button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 3rem;
+    width: 3rem;
+    border: none;
+    outline: none;
+    background-color: var(--background);
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+}
+
+.timer-settings button:hover, .buttons button:hover, .timer-settings button:focus, .buttons button:focus{
+    fill: var(--start);
+    cursor: pointer;
+}
+
+.timer-settings svg{
+    height: auto;
+    width: 2rem;
+}
+
+/* .header .buttons .hide.active .show{
+    display: none;
+}
+
+.header .buttons .hide:not(.active) .hide {
+    display: none;
+} */
+
+.timer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60vw;
+    text-align: center;
+    font-weight: 200;
+    letter-spacing: 2vw;    
+    transition: background-color 0.3s ease, color 0.3s ease, fill 0.3s ease;
+    user-select: none;
+}
+
+.timer p{
+    width: 60vw;
+    text-align:center;
+}
+
+.timer p:hover{
+    cursor: pointer;
+}
+
+@media screen and (max-height: 800px) {
+    .timer{
+        margin-top: 9vh;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .timer-settings{
+        top: 73vh;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .timer{
+        font-size: 400px;
+    }
+}
