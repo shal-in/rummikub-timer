@@ -14,15 +14,15 @@
     --end-0: grey;
     --text-0: yellow;
 
-    --background-1: #1A1627;
-    --start-1: #B8B1D2;
-    --end-1: #887DB5;
-    --text-1: #3B345B;
+    --background-1: #facae3;
+    --start-1: #c28ab6;
+    --end-1: #29041f;
+    --text-1: #e53fa3;
 
-    --background-2: orange;
-    --start-2: green;
-    --end-2: blue;
-    --text-2: yellow;
+    --background-2: #495944;
+    --start-2: #697B65;
+    --end-2:#94321a;
+    --text-2: #141713;
 }
 
 html{
