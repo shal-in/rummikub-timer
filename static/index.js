@@ -3,13 +3,14 @@ const timerSettings = document.querySelector(".timer-settings");
 const minusBtnEl = timerSettings.querySelector(".minus");
 const plusBtnEl = timerSettings.querySelector(".plus");
 const timeEl = timerSettings.querySelector(".time");
-const timerDiv = document.querySelector(".timer p");
+const timerDiv = document.querySelector(".timer");
+const timerDivP = timerDiv.querySelector("p");
 
 let time = parseInt(localStorage.getItem("time"));
 if (!time) {
     time = parseInt(timeEl.innerHTML);
 } else {
-    timerDiv.textContent = time;
+    timerDivP.textContent = time;
     timeEl.textContent = time;
 }
 
@@ -60,19 +61,19 @@ function startTimer(time) {
     localStorage.setItem("time", time);
 
     // Start the countdown immediately
-    timerDiv.textContent = time;
+    timerDivP.textContent = time;
     time--;
 
     intervalId = setInterval(() => {
         if (time <= 0) {
             document.documentElement.style.setProperty("--background", `var(--end-${paintIndex})`);
 
-            timerDiv.textContent = time;
+            timerDivP.textContent = time;
             clearInterval(intervalId);
             intervalId = null;
         } else {
             document.documentElement.style.setProperty("--background", `var(--background-${paintIndex})`);
-            timerDiv.textContent = time;
+            timerDivP.textContent = time;
             time--;
         }
     }, 1000);
@@ -96,10 +97,7 @@ document.addEventListener("keyup", (e) => {
 // paint
 
 const paintBtnEl = document.querySelector(".paint")
-let paintIndex = localStorage.getItem("paintIndex")
-if (!paintIndex){
-    paintIndex = 0
-}
+let paintIndex = 1;
 
 
 function changePaint(){
